@@ -23,5 +23,3 @@ goal = 100000
 remaining = goal - profit
 months = remaining / profit
 print(f"Months to 100k: {months:.1f}")
-
-Add 100k savings forecast logic

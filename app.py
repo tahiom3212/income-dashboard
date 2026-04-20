@@ -26,6 +26,9 @@ if st.button("Calculate"):
     if total == 0:
         st.error("⚠️ Please enter monthly savings")
     else:
+        if goal <= current:
+            st.success("🎉 You already reached your goal!")
+
         remaining = goal - current
         st.write(f"💸 Remaining to save: {round(remaining, 2)} €")
 

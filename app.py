@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("💰 Finance Dashboard")
+st.title("💰 My First Finance App")
 
 goal = st.number_input("Goal")
 current = st.number_input("Current savings")

@@ -1,13 +1,16 @@
 import streamlit as st
 
-st.title("🔥 TEST 123 🔥")
+# UI
+st.title("💰 Savings Goal Calculator")
+st.caption("Simple tool to calculate your savings goal and timeline")
 
-goal = st.number_input("Goal")
-current = st.number_input("Current savings")
-monthly = st.number_input("Monthly save")
-side = st.number_input("Side income")
+# inputs
+goal = st.number_input("🎯 Your savings goal (€)")
+current = st.number_input("💰 Current savings (€)")
+monthly = st.number_input("💵 Monthly savings (€)")
+side = st.number_input("⚡ Extra income (€)")
 
-
+# logic
 def finance_summary(goal, current, monthly, side):
     total = monthly + side
     if total == 0:
@@ -16,8 +19,14 @@ def finance_summary(goal, current, monthly, side):
     future = current + total * 12
     return months, future
 
-
+# action
 if st.button("Calculate"):
-    months, future = finance_summary(goal, current, monthly, side)
-    st.write("Months to goal:", round(months, 2))
-    st.write("Savings in 12 months:", future)
+    total = monthly + side
+
+    if total == 0:
+        st.error("⚠️ Please enter monthly savings")
+    else:
+        months, future = finance_summary(goal, current, monthly, side)
+
+        st.success(f"📅 You will reach your goal in {round(months, 1)} months")
+        st.info(f"💰 In 12 months you will have: {round(future, 2)} €")

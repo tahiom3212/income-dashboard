@@ -27,7 +27,8 @@ if st.button("Calculate"):
         st.error("⚠️ Please enter monthly savings")
     else:
         remaining = goal - current
-st.write(f"💸 Remaining to save: {round(remaining, 2)} €")
+        st.write(f"💸 Remaining to save: {round(remaining, 2)} €")
+
         months, future = finance_summary(goal, current, monthly, side)
 
         st.success(f"📅 You will reach your goal in {round(months, 1)} months")

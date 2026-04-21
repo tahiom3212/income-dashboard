@@ -41,3 +41,4 @@ if st.button("Reset"):
     st.session_state.current = 0
     st.session_state.monthly = 0
     st.session_state.side = 0
+    st.rerun()

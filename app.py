@@ -35,6 +35,7 @@ if st.button("Calculate"):
 
         st.success(f"📅 You will reach your goal in {round(months, 1)} months")
         st.info(f"💰 In 12 months you will have: {round(future, 2)} €")
+        
         if st.button("Reset"):
     st.session_state.goal = 0
     st.session_state.current = 0

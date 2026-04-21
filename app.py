@@ -19,7 +19,6 @@ def finance_summary(goal, current, monthly, side):
     return months, future
 
 # action
-# action
 if st.button("Calculate"):
     total = monthly + side
 

@@ -5,11 +5,10 @@ st.title("💰 Savings Goal Calculator")
 st.caption("Simple tool to calculate your savings goal and timeline")
 
 # inputs
-goal = st.number_input("🎯 Your savings goal (€)")
-current = st.number_input("💰 Current savings (€)")
-monthly = st.number_input("💵 Monthly savings (€)")
-side = st.number_input("⚡ Extra income (€)")
-
+goal = st.number_input("🎯 Your savings goal (€)", key="goal")
+current = st.number_input("💰 Current savings (€)", key="current")
+monthly = st.number_input("💵 Monthly savings (€)", key="monthly")
+side = st.number_input("⚡ Extra income (€)", key="side")
 # logic
 def finance_summary(goal, current, monthly, side):
     total = monthly + side

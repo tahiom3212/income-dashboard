@@ -35,7 +35,7 @@ if st.button("Calculate"):
         st.info(f"💰 In 12 months you will have: {round(future, 2)} €")
 
 
-# 👇 ОСЬ СЮДИ ДОДАЄШ
+# 👇
 if st.button("Reset"):
     st.session_state.goal = 0
     st.session_state.current = 0

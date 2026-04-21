@@ -27,12 +27,23 @@ if st.button("Calculate"):
     elif goal <= current:
         st.success("🎉 You already reached your goal!")
     else:
-        remaining = goal - current
-        months, future = finance_summary(goal, current, monthly, side)
+    remaining = goal - current
+    months, future = finance_summary(goal, current, monthly, side)
 
-        st.write(f"💸 Remaining to save: {round(remaining, 2)} €")
-        st.success(f"📅 You will reach your goal in {round(months, 1)} months")
-        st.info(f"💰 In 12 months you will have: {round(future, 2)} €")
+    st.write(f"💸 Remaining to save: {round(remaining, 2)} €")
+
+    st.success(f"📅 You will reach your goal in {round(months, 1)} months")
+
+    # 👇 НОВЕ (роки)
+    years = months / 12
+    st.write(f"🗓️ That is about {round(years, 1)} years")
+
+    # 👇 НОВЕ (прогрес)
+    if goal > 0:
+        progress = (current / goal) * 100
+        st.write(f"📊 Progress: {round(progress, 1)}%")
+
+    st.info(f"💰 In 12 months you will have: {round(future, 2)} €")
 
 
 # 👇

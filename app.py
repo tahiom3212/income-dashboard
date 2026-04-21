@@ -19,25 +19,25 @@ def finance_summary(goal, current, monthly, side):
     return months, future
 
 # action
+# action
 if st.button("Calculate"):
     total = monthly + side
 
     if total == 0:
         st.error("⚠️ Please enter monthly savings")
+    elif goal <= current:
+        st.success("🎉 You already reached your goal!")
     else:
-        if goal <= current:
-            st.success("🎉 You already reached your goal!")
-
         remaining = goal - current
-        st.write(f"💸 Remaining to save: {round(remaining, 2)} €")
-
         months, future = finance_summary(goal, current, monthly, side)
 
+        st.write(f"💸 Remaining to save: {round(remaining, 2)} €")
         st.success(f"📅 You will reach your goal in {round(months, 1)} months")
         st.info(f"💰 In 12 months you will have: {round(future, 2)} €")
-        
-#
-        if st.button("Reset"):
+
+
+# 👇 ОСЬ СЮДИ ДОДАЄШ
+if st.button("Reset"):
     st.session_state.goal = 0
     st.session_state.current = 0
     st.session_state.monthly = 0

@@ -64,5 +64,7 @@ if st.button("Calculate"):
 
 # reset
 if st.button("Reset"):
-    for key in ["goal", "current", "monthly", "side", "rent", "food", "other"]:
-        st.session_state[key] = 0
+    st.markdown(
+        "<meta http-equiv='refresh' content='0'>",
+        unsafe_allow_html=True
+    )

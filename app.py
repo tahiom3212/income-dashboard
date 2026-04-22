@@ -64,7 +64,12 @@ if st.button("Calculate"):
 
 # reset
 if st.button("Reset"):
-    st.session_state.goal = 0
-    st.session_state.current = 0
-    st.session_state.monthly = 0
-    st.session_state.side = 0
+    st.session_state.update({
+        "goal": 0,
+        "current": 0,
+        "monthly": 0,
+        "side": 0,
+        "rent": 0,
+        "food": 0,
+        "other": 0
+    })

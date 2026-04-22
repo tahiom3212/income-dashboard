@@ -2,6 +2,7 @@ import streamlit as st
 
 # UI
 st.title("💰Personal Finance Tracker")
+st.write("Track your savings, expenses, and see if you are financially positive each month.")
 st.caption("Simple tool to calculate your savings goal and timeline")
 
 # inputs

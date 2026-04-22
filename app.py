@@ -62,6 +62,7 @@ if st.button("Calculate"):
 
         if goal > 0:
             progress = (current / goal) * 100
+            st.progress(min(int(progress), 100))
             st.write(f"📊 Progress: {round(progress, 1)}%")
 
         st.info(f"💰 In 12 months you will have: {round(future, 2)} €")

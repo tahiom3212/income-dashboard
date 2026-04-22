@@ -30,9 +30,9 @@ if st.button("Calculate"):
         remaining = goal - current
         months, future = finance_summary(goal, current, monthly, side)
 
-    st.write(f"💸 Remaining to save: {round(remaining, 2)} €")
+        st.write(f"💸 Remaining to save: {round(remaining, 2)} €")
 
-    st.success(f"📅 You will reach your goal in {round(months, 1)} months")
+        st.success(f"📅 You will reach your goal in {round(months, 1)} months")
 
     # 👇 НОВЕ (роки)
     years = months / 12

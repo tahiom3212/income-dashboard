@@ -31,6 +31,16 @@ if st.button("Calculate"):
         st.success("🎉 You already reached your goal!")
     else:
         remaining = goal - current
+        expenses = rent + food + other
+net = (monthly + side) - expenses
+
+st.write(f"💸 Total monthly expenses: {expenses} €")
+st.write(f"💵 Money left after expenses: {net} €")
+
+if net > 0:
+    st.success("✅ You are saving money")
+else:
+    st.error("❌ You are losing money")
         months, future = finance_summary(goal, current, monthly, side)
 
         st.write(f"💸 Remaining to save: {round(remaining, 2)} €")

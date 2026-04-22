@@ -9,6 +9,9 @@ goal = st.number_input("🎯 Your savings goal (€)", key="goal")
 current = st.number_input("💰 Current savings (€)", key="current")
 monthly = st.number_input("💵 Monthly savings (€)", key="monthly")
 side = st.number_input("⚡ Extra income (€)", key="side")
+rent = st.number_input("🏠 Rent (€)", key="rent")
+food = st.number_input("🍔 Food (€)", key="food")
+other = st.number_input("📦 Other expenses (€)", key="other")
 # logic
 def finance_summary(goal, current, monthly, side):
     total = monthly + side

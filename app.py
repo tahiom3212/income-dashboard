@@ -6,10 +6,13 @@ st.write("Track your savings, expenses, and see if you are financially positive 
 st.caption("Simple tool to calculate your savings goal and timeline")
 
 # inputs
+st.header("📊 Income & Savings")
 goal = st.number_input("🎯 Your savings goal (€)", key="goal")
 current = st.number_input("💰 Current savings (€)", key="current")
 monthly = st.number_input("💵 Monthly savings (€)", key="monthly")
 side = st.number_input("⚡ Extra income (€)", key="side")
+
+st.header("💸 Expenses")
 rent = st.number_input("🏠 Rent (€)", key="rent")
 food = st.number_input("🍔 Food (€)", key="food")
 other = st.number_input("📦 Other expenses (€)", key="other")

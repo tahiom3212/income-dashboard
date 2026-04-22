@@ -1,7 +1,7 @@
 import streamlit as st
 
 # UI
-st.title("💰 Savings Goal Calculator")
+st.title("💰Personal Finance Tracker")
 st.caption("Simple tool to calculate your savings goal and timeline")
 
 # inputs

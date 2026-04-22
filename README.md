@@ -1,20 +1,23 @@
-# Income Dashboard
+# 💰 Personal Finance Tracker
 
-A Python income tracking and analytics dashboard.
+Simple web app to track your savings, expenses, and financial progress.
 
 ## Features
-- Add income entries
-- View summary
-- Analytics by category
-- Monthly breakdown
-- CSV export
-- Progress toward income goals
+- Calculate time to reach your savings goal
+- Track monthly expenses
+- See if you are saving or losing money
+- View remaining balance
+- Progress bar for savings goal
 
-## Files
-- income_tracker_script.py
-- analytics_report.py
-- export_csv.py
-- income_data.json
+## Tech
+- Python
+- Streamlit
 
-## Goal
-This project helps track salary + IT income and analyze monthly growth.
+## How it works
+Enter your income, savings, and expenses to see:
+- How long it will take to reach your goal
+- Your monthly financial balance
+- Your progress in %
+
+## Demo
+https://share.streamlit.io/user/tahiom3212

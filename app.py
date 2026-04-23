@@ -14,10 +14,11 @@ st.header("💸 Expenses")
 rent = st.number_input("🏠 Rent (€)")
 food = st.number_input("🍔 Food (€)")
 other = st.number_input("📦 Other expenses (€)")
+transport = st.number_input("🚗 Transport (€)")
 
 # action
 if st.button("Calculate"):
-    expenses = rent + food + other
+    expenses = rent + food + other + transport
     net = income - expenses
 
     st.write(f"💸 Total expenses: {expenses} €")

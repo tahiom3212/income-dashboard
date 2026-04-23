@@ -7,15 +7,15 @@ st.caption("Simple tool to calculate your savings goal and timeline")
 
 # inputs
 st.header("📊 Income & Savings")
-goal = st.number_input("🎯 Your savings goal (€)", key="goal")
-current = st.number_input("💰 Current savings (€)", key="current")
-monthly = st.number_input("💵 Monthly savings (€)", key="monthly")
-side = st.number_input("⚡ Extra income (€)", key="side")
+
+income = st.number_input("💵 Monthly income (€)")
+savings = st.number_input("💰 Current savings (€)")
 
 st.header("💸 Expenses")
-rent = st.number_input("🏠 Rent (€)", key="rent")
-food = st.number_input("🍔 Food (€)", key="food")
-other = st.number_input("📦 Other expenses (€)", key="other")
+
+rent = st.number_input("🏠 Rent (€)")
+food = st.number_input("🍔 Food (€)")
+other = st.number_input("📦 Other expenses (€)")
 
 # logic
 def finance_summary(goal, current, monthly, side):
@@ -41,15 +41,15 @@ if st.button("Calculate"):
 
         # 👇 expenses
         expenses = rent + food + other
-        net = (monthly + side) - expenses
+    net = income - expenses
 
-        st.write(f"💸 Total monthly expenses: {expenses} €")
-        st.write(f"💵 Money left after expenses: {net} €")
+    st.write(f"💸 Total expenses: {expenses} €")
+    st.write(f"💵 Money left: {net} €")
 
-        if net > 0:
-            st.success("✅ You are saving money")
-        else:
-            st.error("❌ You are losing money")
+    if net > 0:
+    st.success(f"✅ You save {net} € per month")
+    else:
+        st.error(f"❌ You lose {abs(net)} € per month")
 
         # 👇 основна логіка
         months, future = finance_summary(goal, current, monthly, side)

@@ -15,17 +15,21 @@ rent = st.number_input("🏠 Rent (€)")
 food = st.number_input("🍔 Food (€)")
 other = st.number_input("📦 Other expenses (€)")
 transport = st.number_input("🚗 Transport (€)")
+gym = st.number_input("💪 Gym (€)")
 
 # action
 if st.button("Calculate"):
-    expenses = rent + food + other + transport
+    expenses = rent + food + other + transport + gym
     net = income - expenses
-
+    percent = (expenses / income) * 100
+    
+    st.write(f"📊 You spend {round(percent, 1)}% of your income")
     st.write(f"💸 Total expenses: {expenses} €")
     st.write(f"💵 Money left: {net} €")
 
-    if net > 0:
-        st.success(f"✅ You save {net} € per month")
+    if income > 0:
+        percent = (expenses / income) * 100
+        st.write(f"📊 You spend {round(percent, 1)}% of your income")
     elif net == 0:
         st.warning("⚖️ You break even")
     else:

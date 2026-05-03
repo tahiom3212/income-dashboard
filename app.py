@@ -42,7 +42,7 @@ if st.button("Calculate"):
         st.error(f"❌ You lose {abs(net)} € per month")
         st.info("💡 Tip: Reduce expenses or increase income.")
 
-# графік
+    # графік
     st.subheader("📊 Expense Breakdown")
     st.bar_chart({
         "Rent": rent,

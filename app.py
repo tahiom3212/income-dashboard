@@ -25,11 +25,11 @@ if st.button("Calculate"):
 
     col1, col2 = st.columns(2)
 
-with col1:
-    st.metric("💸 Expenses", f"{expenses} €")
+    with col1:
+        st.metric("💸 Expenses", f"{expenses} €")
 
-with col2:
-    st.metric("💵 Left", f"{net} €")
+    with col2:
+        st.metric("💵 Left", f"{net} €")
 
     # % витрат
     if income > 0:
@@ -55,7 +55,7 @@ with col2:
         "Other": other,
         "Transport": transport,
         "Gym": gym
-})
+    })
 # reset
 if st.button("Reset"):
     st.markdown(

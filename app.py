@@ -2,6 +2,7 @@ import streamlit as st
 
 # UI
 st.title("💰 Personal Finance Tracker")
+st.markdown("### 💡 Simple tool to understand your money flow")
 st.write("Track your income, expenses, and see if you are saving money.")
 
 # inputs

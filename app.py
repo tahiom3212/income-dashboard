@@ -23,8 +23,13 @@ if st.button("Calculate"):
     expenses = rent + food + other + transport + gym
     net = income - expenses
 
-    st.write(f"💸 Total expenses: {expenses} €")
-    st.write(f"💵 Money left: {net} €")
+    col1, col2 = st.columns(2)
+
+with col1:
+    st.metric("💸 Expenses", f"{expenses} €")
+
+with col2:
+    st.metric("💵 Left", f"{net} €")
 
     # % витрат
     if income > 0:

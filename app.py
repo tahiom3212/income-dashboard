@@ -41,3 +41,10 @@ if st.button("Reset"):
         "<meta http-equiv='refresh' content='0'>",
         unsafe_allow_html=True
     )
+    st.bar_chart({
+    "Rent": rent,
+    "Food": food,
+    "Other": other,
+    "Transport": transport,
+    "Gym": gym
+})

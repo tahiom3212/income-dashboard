@@ -17,6 +17,9 @@ gym = st.number_input("💪 Gym (€)")
 
 # action
 if st.button("Calculate"):
+    st.divider()
+    st.subheader("📈 Results")
+    
     expenses = rent + food + other + transport + gym
     net = income - expenses
 
@@ -39,7 +42,7 @@ if st.button("Calculate"):
         st.error(f"❌ You lose {abs(net)} € per month")
         st.info("💡 Tip: Reduce expenses or increase income.")
 
-    # графік
+# графік
     st.subheader("📊 Expense Breakdown")
     st.bar_chart({
         "Rent": rent,
@@ -47,8 +50,7 @@ if st.button("Calculate"):
         "Other": other,
         "Transport": transport,
         "Gym": gym
-    })
-
+})
 # reset
 if st.button("Reset"):
     st.markdown(

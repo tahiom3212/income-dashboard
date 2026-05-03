@@ -22,6 +22,13 @@ if st.button("Calculate"):
     expenses = rent + food + other + transport + gym
     net = income - expenses
     percent = (expenses / income) * 100
+        st.bar_chart({
+        "Rent": rent,
+        "Food": food,
+        "Other": other,
+        "Transport": transport,
+        "Gym": gym
+    })
     
     st.write(f"📊 You spend {round(percent, 1)}% of your income")
     st.write(f"💸 Total expenses: {expenses} €")
@@ -41,10 +48,3 @@ if st.button("Reset"):
         "<meta http-equiv='refresh' content='0'>",
         unsafe_allow_html=True
     )
-    st.bar_chart({
-    "Rent": rent,
-    "Food": food,
-    "Other": other,
-    "Transport": transport,
-    "Gym": gym
-})

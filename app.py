@@ -63,3 +63,4 @@ if st.button("Reset"):
         "<meta http-equiv='refresh' content='0'>",
         unsafe_allow_html=True
     )
+    st.caption("Built with Python & Streamlit")

@@ -6,11 +6,9 @@ st.write("Track your income, expenses, and see if you are saving money.")
 
 # inputs
 st.header("📊 Income")
-
 income = st.number_input("💵 Monthly income (€)")
 
 st.header("💸 Expenses")
-
 rent = st.number_input("🏠 Rent (€)")
 food = st.number_input("🍔 Food (€)")
 other = st.number_input("📦 Other expenses (€)")
@@ -21,26 +19,34 @@ gym = st.number_input("💪 Gym (€)")
 if st.button("Calculate"):
     expenses = rent + food + other + transport + gym
     net = income - expenses
-    percent = (expenses / income) * 100
-        st.bar_chart({
+
+    st.write(f"💸 Total expenses: {expenses} €")
+    st.write(f"💵 Money left: {net} €")
+
+    # % витрат
+    if income > 0:
+        percent = (expenses / income) * 100
+        st.write(f"📊 You spend {round(percent, 1)}% of your income")
+
+    # статус + порада
+    if net > 0:
+        st.success(f"✅ You save {net} € per month")
+        st.info("💡 Tip: You can increase your savings or invest.")
+    elif net == 0:
+        st.warning("⚖️ You break even")
+        st.info("💡 Tip: Try to reduce small expenses.")
+    else:
+        st.error(f"❌ You lose {abs(net)} € per month")
+        st.info("💡 Tip: Reduce expenses or increase income.")
+
+    # графік
+    st.bar_chart({
         "Rent": rent,
         "Food": food,
         "Other": other,
         "Transport": transport,
         "Gym": gym
     })
-    
-    st.write(f"📊 You spend {round(percent, 1)}% of your income")
-    st.write(f"💸 Total expenses: {expenses} €")
-    st.write(f"💵 Money left: {net} €")
-
-    if income > 0:
-        percent = (expenses / income) * 100
-        st.write(f"📊 You spend {round(percent, 1)}% of your income")
-    elif net == 0:
-        st.warning("⚖️ You break even")
-    else:
-        st.error(f"❌ You lose {abs(net)} € per month")
 
 # reset
 if st.button("Reset"):

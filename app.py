@@ -40,6 +40,7 @@ if st.button("Calculate"):
         st.info("💡 Tip: Reduce expenses or increase income.")
 
     # графік
+    st.subheader("📊 Expense Breakdown")
     st.bar_chart({
         "Rent": rent,
         "Food": food,

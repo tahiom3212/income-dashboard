@@ -1,34 +1,23 @@
 import streamlit as st
 
 # UI
-st.title("💰 Expense Tracker")
-st.markdown("### 💡 Simple tool to track your expenses")
+st.title("💸 Salary Calculator")
+st.markdown("### 💡 Calculate your earnings based on hourly work")
 
-st.header("💸 Expenses")
-rent = st.number_input("🏠 Rent (€)")
-food = st.number_input("🍔 Food (€)")
-other = st.number_input("📦 Other expenses (€)")
-transport = st.number_input("🚗 Transport (€)")
-gym = st.number_input("💪 Gym (€)")
-
-hours_rate = st.number_input(" hours_rate (€)")
-hours_per_day = st.number_input(" hours_per day (€)")
-days_worked = st.number_input(" days_worked (€)")
+# inputs
+hourly_rate = st.number_input("💶 Hourly rate (€)")
+hours_per_day = st.number_input("⏱ Hours per day")
+days_worked = st.number_input("📅 Days worked")
 
 # action
 if st.button("Calculate"):
     st.divider()
-    st.subheader("📈 Results")
+    st.subheader("📊 Results")
 
-    total = rent + food + other + transport + gym
+    daily_income = hourly_rate * hours_per_day
+    total_income = daily_income * days_worked
+    monthly_income = daily_income * 20
 
-    st.metric("💸 Total Expenses", f"{total} €")
-
-# reset
-if st.button("Reset"):
-    st.markdown(
-        "<meta http-equiv='refresh' content='0'>",
-        unsafe_allow_html=True
-    )
-
-st.caption("Built with Python & Streamlit")
+    st.metric("💰 Daily income", f"{daily_income} €")
+    st.metric("💰 Total income", f"{total_income} €")
+    st.metric("📅 Monthly estimate", f"{monthly_income} €")

@@ -11,6 +11,10 @@ other = st.number_input("📦 Other expenses (€)")
 transport = st.number_input("🚗 Transport (€)")
 gym = st.number_input("💪 Gym (€)")
 
+hours_rate = st.number_input(" hours_rate (€)")
+hours_per_day = st.number_input(" hours_per day (€)")
+days_worked = st.number_input(" days_worked (€)")
+
 # action
 if st.button("Calculate"):
     st.divider()

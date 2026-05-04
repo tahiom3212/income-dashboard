@@ -22,14 +22,14 @@ if st.button("Calculate"):
     st.metric("💰 Total income", f"{total_income} €")
     st.metric("📅 Monthly estimate", f"{monthly_income} €")
 
-col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns(3)
 
-with col1:
-    st.metric("💰 Daily", f"{daily_income} €")
+    with col1:
+        st.metric("💰 Daily", f"{daily_income} €")
 
-with col2:
-    st.metric("💰 Total", f"{total_income} €")
+    with col2:
+        st.metric("💰 Total", f"{total_income} €")
 
-with col3:
-    st.metric("📅 Month", f"{monthly_income} €")
+    with col3:
+        st.metric("📅 Month", f"{monthly_income} €")
 

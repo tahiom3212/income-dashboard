@@ -33,4 +33,3 @@ if st.button("Calculate"):
     with col3:
         st.metric("📅 Month", f"{monthly_income} €")
 
-

@@ -1,0 +1,30 @@
+import streamlit as st
+
+# UI
+st.title("💰 Expense Tracker")
+st.markdown("### 💡 Simple tool to track your expenses")
+
+st.header("💸 Expenses")
+rent = st.number_input("🏠 Rent (€)")
+food = st.number_input("🍔 Food (€)")
+other = st.number_input("📦 Other expenses (€)")
+transport = st.number_input("🚗 Transport (€)")
+gym = st.number_input("💪 Gym (€)")
+
+# action
+if st.button("Calculate"):
+    st.divider()
+    st.subheader("📈 Results")
+
+    total = rent + food + other + transport + gym
+
+    st.metric("💸 Total Expenses", f"{total} €")
+
+# reset
+if st.button("Reset"):
+    st.markdown(
+        "<meta http-equiv='refresh' content='0'>",
+        unsafe_allow_html=True
+    )
+
+st.caption("Built with Python & Streamlit")

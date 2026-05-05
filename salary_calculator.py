@@ -52,6 +52,8 @@ if st.button("Calculate"):
     else:
         st.success("🔥 Great income! You're earning very well.")
     
+    if extra_days > 0:
+        st.info(f"💡 If you work {extra_days} more days, you earn {future_income} €")
 # reset
 if st.button("Reset"):
     st.markdown(

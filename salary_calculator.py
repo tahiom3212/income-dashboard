@@ -14,13 +14,14 @@ extra_days = st.number_input("📅 Extra days (plan ahead)")
 if st.button("Calculate"):
     st.divider()
     st.subheader("📊 Results")
-    st.subheader("🔮 Planning")
-    st.metric("Future earnings", f"{future_income} €")
-    
+
+    # розрахунки
     daily_income = hourly_rate * hours_per_day
     total_income = daily_income * days_worked
     monthly_income = daily_income * 20
+    future_income = daily_income * extra_days
 
+    # основні результати
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -32,6 +33,9 @@ if st.button("Calculate"):
     with col3:
         st.metric("📅 Month (est.)", f"{monthly_income} €")
 
+    # планування 
+    st.subheader("🔮 Planning")
+    st.metric("Future earnings", f"{future_income} €")
 # reset
 if st.button("Reset"):
     st.markdown(

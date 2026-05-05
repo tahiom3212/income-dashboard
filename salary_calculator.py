@@ -36,6 +36,22 @@ if st.button("Calculate"):
     # планування 
     st.subheader("🔮 Planning")
     st.metric("Future earnings", f"{future_income} €")
+    
+    # smart feedback
+    st.subheader("🧠 Insights")
+
+    if daily_income == 0:
+        st.warning("⚠️ Enter your hourly rate and hours")
+
+    elif daily_income < 50:
+        st.info("💡 Your daily income is quite low. Consider increasing hours or rate.")
+
+    elif daily_income < 150:
+        st.success("✅ Solid daily income")
+
+    else:
+        st.success("🔥 Great income! You're earning very well.")
+    
 # reset
 if st.button("Reset"):
     st.markdown(

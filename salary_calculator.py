@@ -8,12 +8,15 @@ st.markdown("### 💡 Calculate your earnings based on hourly work")
 hourly_rate = st.number_input("💶 Hourly rate (€)")
 hours_per_day = st.number_input("⏱ Hours per day")
 days_worked = st.number_input("📅 Days worked")
+extra_days = st.number_input("📅 Extra days (plan ahead)")
 
 # action
 if st.button("Calculate"):
     st.divider()
     st.subheader("📊 Results")
-
+    st.subheader("🔮 Planning")
+    st.metric("Future earnings", f"{future_income} €")
+    
     daily_income = hourly_rate * hours_per_day
     total_income = daily_income * days_worked
     monthly_income = daily_income * 20

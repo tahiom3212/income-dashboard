@@ -35,7 +35,8 @@ if st.button("Calculate"):
 
     # планування 
     st.subheader("🔮 Planning")
-    st.metric("Future earnings", f"{future_income} €")
+    st.metric("💰 Earnings for planned days", f"{future_income} €")
+    st.caption("This shows how much you will earn if you work extra days")
     
     # smart feedback
     st.subheader("🧠 Insights")

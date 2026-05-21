@@ -41,3 +41,8 @@ if st.button("Calculate"):
     
     else:
         st.warning("⚠️ Enter hourly rate and hours")
+        
+# reset
+if st.button("Reset"):
+    st.rerun()
+    

@@ -8,6 +8,12 @@ st.markdown("### 💡 How many days you need to reach your goal")
 hourly_rate = st.number_input("💶 Hourly rate (€)")
 hours_per_day = st.number_input("⏱ Hours per day")
 goal = st.number_input("🎯 Your goal (€)")
+working_days_week = st.number_input(
+    "📅 Working days per week",
+    min_value=1,
+    max_value=7,
+    value=5
+)
 
 # action
 if st.button("Calculate"):

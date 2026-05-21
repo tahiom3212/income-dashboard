@@ -16,8 +16,8 @@ if st.button("Calculate"):
 
     if daily_income > 0:
         days_needed = goal / daily_income
-        weeks_needed = days_needed / 5
-        months_needed = days_needed / 20
+        weeks_needed = days_needed / working_days_week
+        months_needed = weeks_needed / 4.3
         
         st.divider()
         st.subheader("📊 Results")
